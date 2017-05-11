@@ -1,0 +1,6 @@
+methodName: replaceCategories
+OutboundObject: SetCategoriesRequest
+outboundObject: SetCategoriesRequest
+javaUrlPath: + setCategoriesRequest.getMenuId() + "/subcategories"
+HTTP_METHOD: PUT
+destinationClass: MenuClient

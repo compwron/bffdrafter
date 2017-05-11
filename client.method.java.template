@@ -1,0 +1,7 @@
+    public ResponseEntity<String> %%methodName%%(DAPIUserDetails userDetails, %%OutboundObject%% %%outboundObject%%) {
+        String url = MENU_ENDPOINT + "/" %%javaUrlPath%%;
+        HttpHeaders headers = createJsonHttpHeadersWithUserName(userDetails);
+        HttpEntity<%%OutboundObject%%> requestEntity = new HttpEntity<>(%%outboundObject%%, headers);
+        String outboundUrl = new FluentURIBuilder(getServiceEndpoint()).addPath(url).build();
+        return getRestTemplate().exchange(outboundUrl, HttpMethod.%%HTTP_METHOD%%, requestEntity, String.class);
+    }
